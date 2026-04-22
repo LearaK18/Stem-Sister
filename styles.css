@@ -172,10 +172,10 @@ h2 { margin-bottom: 2rem; color: var(--primary-purple); font-family: 'Poppins', 
 .about-hero .hero-grid {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center; /* balanced layout */
   flex-wrap: wrap;
-  gap: 3rem;
-  padding: 2rem 0;
+  gap: 4rem; /* extra spacing */
+  padding: 3rem 1rem;
 }
 
 .about-hero .hero-image {
@@ -185,9 +185,9 @@ h2 { margin-bottom: 2rem; color: var(--primary-purple); font-family: 'Poppins', 
 
 /* Gradient Aura with Pulse */
 @keyframes pulseAura {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
-  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+  50% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
 }
 
 .about-hero .hero-image::before {
@@ -195,56 +195,57 @@ h2 { margin-bottom: 2rem; color: var(--primary-purple); font-family: 'Poppins', 
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 280px;
-  height: 280px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-pink), var(--accent-teal));
+  background: radial-gradient(circle at center, var(--accent-pink) 0%, var(--accent-teal) 100%);
   transform: translate(-50%, -50%);
   z-index: 0;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  animation: pulseAura 5s ease-in-out infinite;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  animation: pulseAura 6s ease-in-out infinite;
 }
 
 /* Floating Avatar */
 @keyframes floatAvatar {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
   100% { transform: translateY(0); }
 }
 
 .about-hero .hero-image img {
   position: relative;
-  width: 250px;
+  width: 260px;
   border-radius: 50%;
+  border: 6px solid #fff;
   z-index: 1;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
   background: #fff;
-  transition: transform 0.3s ease;
-  animation: floatAvatar 4s ease-in-out infinite;
+  transition: transform 0.4s ease;
+  animation: floatAvatar 5s ease-in-out infinite;
 }
 
 .about-hero .hero-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 .about-hero .hero-text {
-  max-width: 550px;
+  max-width: 600px;
   text-align: left;
   line-height: 1.9;
 }
 
 .about-hero .hero-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.7rem;
+  margin-bottom: 1.2rem;
   letter-spacing: 1px;
   color: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
 .about-hero .hero-text p {
-  color: #fff;
-  line-height: 1.8;
-  font-size: 1.05rem;
+  color: #fdfdfd;
+  font-size: 1.1rem;
+  line-height: 1.9;
 }
 
 /* About Section */
@@ -263,10 +264,30 @@ h2 { margin-bottom: 2rem; color: var(--primary-purple); font-family: 'Poppins', 
   letter-spacing: 0.5px;
 }
 
-.about p {
-  max-width: 720px;
-  margin: 0 auto 2rem;
-  line-height: 1.9;
+/* Story Blocks */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.about-block {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.about-block h3 {
+  color: var(--accent-pink);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-block p {
+  line-height: 1.8;
   font-size: 1.05rem;
 }
 
