@@ -100,24 +100,23 @@
     <a href="contact.html" class="btn-secondary">Contact Me</a>
   </section>
 
-<!-- Footer -->
-<section class="Footer">
-<p>Made with <i class="fa fa-heart-o"></i> by Leara Kapuriya</p>
-</section>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Made with <i class="fa fa-heart"></i> by Leara Kapuriya</p>
+  </footer>
 
-    <!-- JavaScript for Toggle Menu -->
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  <!-- JavaScript for Toggle Menu -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
+  <!-- Chatbot Embed -->
+  <script src="https://code.tidio.co/uqdod81sfajvlkpiujfsjo49za71xsuc.js" async></script>
 
-  
-    <!-- Chatbot Embed -->
-    <script src="https://code.tidio.co/uqdod81sfajvlkpiujfsjo49za71xsuc.js" async></script>
-
-  </body>
+</body>
 </html>
+
