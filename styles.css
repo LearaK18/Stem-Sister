@@ -148,3 +148,112 @@ h2 { margin-bottom: 2rem; color: var(--primary-purple); font-family: 'Poppins', 
   }
 }
 
+/* About Page Hero Layout */
+.about-hero .hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about-hero .hero-image {
+  position: relative;
+  display: inline-block;
+}
+
+/* Gradient Aura with Pulse */
+@keyframes pulseAura {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+}
+
+.about-hero .hero-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-teal));
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  animation: pulseAura 5s ease-in-out infinite;
+}
+
+/* Floating Avatar */
+@keyframes floatAvatar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.about-hero .hero-image img {
+  position: relative;
+  width: 250px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  background: #fff;
+  transition: transform 0.3s ease;
+  animation: floatAvatar 4s ease-in-out infinite;
+}
+
+.about-hero .hero-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-hero .hero-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-hero .hero-text h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-hero .hero-text p {
+  color: #fff;
+  line-height: 1.8;
+}
+
+/* About Section */
+.about {
+  background: var(--neutral-light);
+  color: var(--neutral-dark);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.about h2 {
+  color: var(--primary-purple);
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-hero .hero-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-hero .hero-text {
+    text-align: center;
+  }
+  .about-hero .hero-image::before {
+    width: 220px;
+    height: 220px;
+  }
+}
+
