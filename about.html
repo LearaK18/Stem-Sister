@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - STEM Sister</title>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">STEM Sister</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href="forum.html">Discussion</a></li>
+        <li><a href="wellness.html">Wellness</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+      <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Meet Leara</h1>
+      <p>Behind STEM Sister is a girl with a big dream: to make STEM fun, accessible, and inspiring for every child — especially girls who deserve to see themselves as future scientists, engineers, and creators.</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="about">
+    <h2>My Story</h2>
+    <p>Hello! I’m Leara Kapuriya, the creator of STEM Sister. Growing up, I often wished for a space where learning science and technology felt exciting, colorful, and welcoming. That’s why I built this platform — to share knowledge, spark curiosity, and encourage children to believe in their potential.</p>
+    
+    <p>Through STEM Sister, I want to break barriers and show that learning can be joyful. Whether it’s solving math puzzles, experimenting with science, coding something new, or exploring creativity through art, I believe every child deserves the chance to shine.</p>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="facilities">
+    <h2>My Mission</h2>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>Inspire Curiosity</h3>
+        <p>Encouraging children to ask questions, explore ideas, and discover the joy of learning.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        <h3>Empower Girls</h3>
+        <p>Creating a safe, supportive space where girls feel confident to pursue STEM dreams.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Build Access</h3>
+        <p>Making resources available to underprivileged children so no one is left behind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts -->
+  <section class="cta">
+    <h2>Fun Facts About Me</h2>
+    <p>🌸 I love blending science with creativity.<br>
+       🎨 My favorite color palette is purple + pink + teal.<br>
+       📚 I believe learning should always feel like an adventure.<br>
+       🌍 My dream is to see more girls leading in STEM fields worldwide.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Made with <i class="fa fa-heart"></i> by Leara Kapuriya</p>
+  </footer>
+
+  <!-- JavaScript for Toggle Menu -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
