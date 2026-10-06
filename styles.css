@@ -305,3 +305,42 @@ h2 { margin-bottom: 2rem; color: var(--primary-purple); font-family: 'Poppins', 
     height: 220px;
   }
 }
+
+/* Collapsible Story Blocks */
+.about-block {
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.about-block:hover {
+  transform: scale(1.05);
+  background: #ffe6f7;
+}
+.about-block p.hidden {
+  display: none;
+}
+
+/* Fun Facts Carousel */
+.fun-facts li {
+  display: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.fun-facts li.active {
+  display: block;
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scroll-triggered fade-in */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
