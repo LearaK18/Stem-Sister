@@ -13,6 +13,192 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(90deg, #ff9aeb, #9ad9ff);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+      color: #ffe6f7;
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .about-hero {
+      background: linear-gradient(135deg, #ff9aeb, #9ad9ff);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .hero-image img {
+      width: 200px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    .hero-image img:hover {
+      transform: rotate(-5deg) scale(1.05);
+    }
+    .hero-text h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+    }
+
+    /* About Section */
+    .about {
+      padding: 3rem 2rem;
+      background: #fff;
+      text-align: center;
+    }
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .about-block {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 300px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .about-block:hover {
+      transform: scale(1.05);
+      background: #ffe6f7;
+    }
+    .about-block p.hidden {
+      display: none;
+    }
+
+    /* Mission Cards */
+    .facilities {
+      padding: 3rem 2rem;
+      background: #f0f8ff;
+      text-align: center;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 220px;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05) rotate(2deg);
+      background: #ffe6f7;
+    }
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #ff9aeb;
+    }
+
+    /* Fun Facts Carousel */
+    .cta {
+      padding: 3rem 2rem;
+      background: #fff0f6;
+      text-align: center;
+    }
+    .fun-facts {
+      list-style: none;
+      padding: 0;
+    }
+    .fun-facts li {
+      display: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .fun-facts li.active {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Footer */
+    .footer {
+      background: #9ad9ff;
+      text-align: center;
+      padding: 1rem;
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #ff9aeb;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -51,20 +237,20 @@
     </div>
   </section>
 
-<section class="about">
-  <h2>My Story</h2>
-  <div class="about-grid">
-    <div class="about-block">
-      <h3>🌱 Growing Up</h3>
-      <p>I often wished for a space where learning science and technology felt exciting, colorful, and welcoming. That dream inspired me to build STEM Sister — a platform that blends education with creativity.</p>
+  <!-- About Section -->
+  <section class="about">
+    <h2>My Story</h2>
+    <div class="about-grid">
+      <div class="about-block collapsible">
+        <h3>🌱 Growing Up</h3>
+        <p class="hidden">I often wished for a space where learning science and technology felt exciting, colorful, and welcoming. That dream inspired me to build STEM Sister — a platform that blends education with creativity.</p>
+      </div>
+      <div class="about-block collapsible">
+        <h3>✨ My Belief</h3>
+        <p class="hidden">Learning should never feel intimidating. Instead, it should spark curiosity, joy, and confidence. Through STEM Sister, I share resources, quizzes, and interactive lessons that make STEM approachable and engaging.</p>
+      </div>
     </div>
-    <div class="about-block">
-      <h3>✨ My Belief</h3>
-      <p>Learning should never feel intimidating. Instead, it should spark curiosity, joy, and confidence. Through STEM Sister, I share resources, quizzes, and interactive lessons that make STEM approachable and engaging.</p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Mission Section -->
   <section class="facilities">
@@ -96,14 +282,14 @@
   <!-- Fun Facts -->
   <section class="cta">
     <h2>Fun Facts About Me</h2>
-<ul class="fun-facts">
-  <li>🌸 I love blending science with creativity.</li>
-  <li>🎨 My favorite color palette is purple, pink, and teal.</li>
-  <li>📚 Learning should always feel like an adventure.</li>
-  <li>🌍 My dream is to see more girls leading in STEM fields worldwide.</li>
-  <li>💡 I enjoy coding, designing, and creating interactive experiences.</li>
-  <li>🎶 Music and art inspire my approach to teaching and learning.</li>
-</ul>
+    <ul class="fun-facts">
+      <li class="active">🌸 I love blending science with creativity.</li>
+      <li>🎨 My favorite color palette is purple, pink, and teal.</li>
+      <li>📚 Learning should always feel like an adventure.</li>
+      <li>🌍 My dream is to see more girls leading in STEM fields worldwide.</li>
+      <li>💡 I enjoy coding, designing, and creating interactive experiences.</li>
+      <li>🎶 Music and art inspire my approach to teaching and learning.</li>
+    </ul>
   </section>
 
   <!-- Footer -->
@@ -111,14 +297,58 @@
     <p>Made with <i class="fa fa-heart"></i> by Leara Kapuriya</p>
   </footer>
 
-  <!-- JavaScript for Toggle Menu -->
+  <!-- JavaScript for Interactivity -->
   <script>
+    // Toggle Menu
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
+
+    // Collapsible About Blocks
+    document.querySelectorAll('.collapsible h3').forEach(header => {
+      header.addEventListener('click', () => {
+        header.nextElementSibling.classList.toggle('hidden');
+      });
+    });
+
+    // Fun Facts Carousel
+    const facts = document.querySelectorAll('.fun-facts li');
+    let index = 0;
+    setInterval(() => {
+      facts.forEach(f => f.classList.remove('active'));
+      facts[index].classList.add('active');
+      index = (index + 1) % facts.length;
+    }, 3000);
+
+    // Scroll-triggered animations
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
   </script>
+
+  <style>
+    /* Scroll-triggered fade-in */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    section.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </body>
 </html>
 
